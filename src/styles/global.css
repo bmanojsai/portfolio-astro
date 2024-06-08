@@ -1,0 +1,28 @@
+html {
+	box-sizing: border-box;
+}
+
+progress {
+	/* accent-color: red;
+	background-color: tomato; */
+
+	/* remove default colors */
+	-webkit-appearence: none;
+}
+
+/* //Set the background color for progress */
+progress::-webkit-progress-bar {
+	background-color: lightgray;
+    border-radius: 10px;
+}
+
+/* // set the progress value color */
+progress::-webkit-progress-value {
+	background-color: gray;
+    border-radius: 10px;
+}
+
+/* //set the progress value color for FF */
+progress::-moz-progress-bar {
+    background-color: gray;
+}

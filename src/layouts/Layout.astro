@@ -1,0 +1,58 @@
+---
+//Imports
+import "../styles/global.css";
+
+//title
+import '@fontsource/unifrakturmaguntia';
+
+//Headings 1 & 2
+// Supports weights 100-900
+import '@fontsource-variable/noto-serif-display';
+import '@fontsource/dm-serif-display';
+
+//Sub headings (light, regular, medium, semibold)
+import '@fontsource/ibm-plex-serif/300.css';
+import '@fontsource/ibm-plex-serif/400.css';
+import '@fontsource/ibm-plex-serif/500.css';
+import '@fontsource/ibm-plex-serif/600.css';
+
+//Sub Heading Captions
+import '@fontsource/lato/300.css';
+import '@fontsource/lato/400.css';
+import '@fontsource/lato/700.css';
+import '@fontsource/lato/900.css';
+
+//Body
+import '@fontsource/tinos/400.css';
+import '@fontsource/tinos/700.css';
+
+//Others/Capitals
+// Supports weights 300-800
+import '@fontsource-variable/open-sans';
+
+//Types
+interface Props {
+	title: string;
+}
+
+//Props & Params
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-neutral-100 p-10">
+		<slot />
+		<script>
+			import "../scripts/home"
+		</script>
+	</body>
+</html>

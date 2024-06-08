@@ -1,0 +1,65 @@
+---
+import DetailsChip from "./DetailsChip.astro";
+
+//Data
+const name = "Manoj Sai Bellamkonda"
+
+const email = "manojsaibellamkonda@gmail.com";
+const githubUrl = "https://github.com/bmanojsai";
+const githubUsername = "bmanojsai";
+const linkedinUrl = "https://www.linkedin.com/in/bellamkonda-manoj-sai/";
+const linkedinUsername = "Manoj Sai Bellamkonda";
+
+const lastUpdatedDay = "Saturday";
+const lastUpdatedDate = "8 June";
+const lastUpdatedYear = "2024";
+---
+
+<div
+	class="text-end text-xs md:text-base font-sub-heading font-regular tracking-tight !leading-tight mb-1"
+>
+	<span class="text-[10px] md:text-xs font-bold font-other tracking-normal"
+		>LAST UPDATED ON</span
+	>
+	<br />
+	<span>{lastUpdatedDay}</span><span class="font-semibold">, {lastUpdatedDate}, </span><span
+		>{lastUpdatedYear}</span
+	>
+</div>
+
+<hr class="h-px bg-gray-600 border-0 md:mt-1" />
+
+<p
+	class="block w-full text-3xl text-center py-2 md:text-6xl lg:text-8xl font-title"
+>
+	{name}
+</p>
+
+<div
+	class="flex justify-end items-center gap-1 mb-1 text-[10px] md:mb-2 md:justify-around"
+>
+	<DetailsChip
+		iconId="email-icon"
+		iconName="at-the-rate"
+		detailsId="email-details"
+		detailsName={email}
+	/>
+	<DetailsChip
+		iconId="github-icon"
+		iconName="github"
+		detailsId="github-details"
+		detailsRef={githubUrl}
+		detailsName={githubUsername}
+	/>
+	<DetailsChip
+		iconId="linkedin-icon"
+		iconName="linkedin"
+		detailsId="linkedin-details"
+		detailsRef={linkedinUrl}
+		detailsName={linkedinUsername}
+	/>
+</div>
+
+<hr class="h-px mt-0.5 bg-gray-600 border-0 md:mt-1" />
+<hr class="h-px mt-0.5 bg-gray-600 border-0 md:mt-1" />
+<hr class="h-px mt-0.5 bg-gray-600 border-0 md:mt-1" />

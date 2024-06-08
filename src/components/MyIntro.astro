@@ -1,0 +1,47 @@
+---
+//Imports
+import { Image } from "astro:assets";
+import profilePic from "../images/profile-picture.png";
+
+//Data
+const heading =
+	"From Circuits to Code: Manoj Sai Bellamkonda's Journey to Mastering JavaScript & React";
+const subHeading =
+	"Blending Engineering Precision with Web Development Creativity, I try to bring a unique perspective to building modern, responsive applications.";
+const subHeadingCaption = "About Me";
+const body = [
+	"Hello! I'm Manoj Sai Bellamkonda, a passionate software engineer specializing in JavaScript and React frameworks. Although my academic background is in Electronics and Communication Engineering, my true calling has always been in the world of programming. After graduating, I decided to follow my passion and delved into web development, starting with Django and eventually mastering web and mobile development using JavaScript.",
+	"My journey took a significant turn when I joined Bounteous, where I honed my skills in modern technologies like React, Next.js, React Native, Node.js, and Express. I thrive on the problem-solving aspects of programming and relish the satisfaction that comes with cracking complex problems. Additionally, I have a solid grasp of TypeScript and am always eager to explore and learn new technologies to stay at the forefront of the industry.",
+	"Outside the realm of coding, I enjoy watching movies, playing mobile games, and keeping fit at the gym. I'm also an avid learner, constantly seeking out new knowledge and experiences. Welcome to my portfolio, where you can explore my projects, skills, and the journey that has shaped my career in web development.",
+];
+---
+
+<div class="py-2 border-b border-black">
+	<p
+		class="font-heading-1 text-xl text-justify my-1 font-semibold md:text-4xl md:tracking-tight md:my-2"
+	>
+		{heading}
+	</p>
+	<Image
+		src={profilePic}
+		alt="Manoj Sai Bellamkonda"
+		class={"w-full h-[150px] object-cover my-2 md:w-[60%] md:h-[250px] md:float-right md:my-4 md:ml-4 md:border md:border-black"}
+	/>
+	<p class="font-sub-heading text-sm my-1 md:mt-4 md:mb-2 md:text-lg">
+		{subHeading}
+	</p>
+	<p
+		class="font-sub-heading-caption text-xs font-bold border border-x-0 border-y-1 border-black my-2 md:text-sm md:w-[38%]"
+	>
+		{subHeadingCaption}
+	</p>
+	<div class="mt-4">
+		{
+			body?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+	</div>
+</div>

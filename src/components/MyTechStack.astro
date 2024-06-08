@@ -1,0 +1,111 @@
+---
+//Imports
+
+//Data
+const heading =
+	"Revolutionizing Development: Cutting-edge Tech Stacks Unveiled!";
+const subHeadingCaption = "My Tech Stack";
+const mainTech = [
+	"Over the past two years at Bounteous, I have focused primarily on JavaScript, React, Next.js, and styling languages like HTML, CSS, and Tailwind CSS. These core technologies form the backbone of my development expertise.",
+];
+
+interface MainTechInfo {
+	[key: string]: number;
+}
+
+const mainTechPercent: MainTechInfo = {
+	"JS/TS": 80,
+	React: 90,
+	Next: 80,
+	styling: 85,
+};
+
+const mainTechKeys: string[] = Object.keys(mainTechPercent);
+
+const otherTech = [
+	"In addition to these main technologies, I have also worked with a wide array of other tools and frameworks, including:",
+];
+
+interface OtherTechInfo {
+	[key: string]: string;
+}
+
+const otherTechInfo: OtherTechInfo = {
+	"Frontend Development": "TypeScript, React Native, Redux, Framer Motion",
+	"Backend Development":
+		"Node.js, Express, GraphQL, Apollo Server, Apollo Client",
+	Databases: "MySQL, PostgreSQL, MongoDB ",
+	"Version Control": "Git",
+};
+
+const otherTechKeys: string[] = Object.keys(otherTechInfo);
+
+const outro = [
+	"While my primary focus is on JavaScript and related frontend technologies, my experience with this broader tech stack demonstrates my ability to quickly adapt and recall knowledge to efficiently work on various projects.",
+];
+---
+
+<div class="py-2 border-b border-black">
+	<p class="font-heading-2 text-xl text-justify my-1 font-semibold md:text-3xl md:my-2">
+		{heading}
+	</p>
+	<p
+		class="font-sub-heading-caption text-xs font-bold border border-x-0 border-y-1 border-black my-2 md:text-sm"
+	>
+		{subHeadingCaption}
+	</p>
+	<div class="mt-4 ">
+		{
+			mainTech?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+		<div class="p-4 m-2 my-4 border border-black md:text-base md:leading-5 md:my-6">
+			{
+				mainTechKeys?.map((key) => (
+					<div class="flex justify-between items-center">
+						<label for={key} class=" font-body text-sm w-[100px] ">
+							{key}
+						</label>
+						<span>:</span>
+						<progress
+							id={key}
+							value={mainTechPercent[key]}
+							max="100"
+							class="w-[60%] my-2 ml-4 h-2"
+						/>
+					</div>
+				))
+			}
+		</div>
+		{
+			otherTech?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+		<div class="my-4">
+			{
+				otherTechKeys?.map((key) => (
+					<p class="font-body text-sm leading-tight tracking-tight my-1 md:text-base md:leading-5 md:m-2">
+						<>
+							<span class="font-bold">{key}:</span>
+							<span> {otherTechInfo[key]}</span>
+						</>
+					</p>
+				))
+			}
+		</div>
+
+		{
+			outro?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+	</div>
+</div>
