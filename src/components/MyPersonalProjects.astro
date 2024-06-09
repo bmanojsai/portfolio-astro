@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+// import pokemonImg from "../images/pokemon-project-img.png";
+import aiChatImg from "../images/aiChat-project-img.png";
+// import threeDToolImg from "../images/3D-tool-project-img.png";
+import { Icon } from "astro-icon/components";
+
+const heading = "Innovative Projects: A Glimpse into Cutting-Edge Development";
+const subHeading =
+	"Explore the Range of my Personal Projects Showcasing Technical Expertise and Creativity";
+
+const subHeadingCaption = "My Personal Projects";
+
+const intro = [
+	"In the dynamic world of software development, I try to stand out with a portfolio of innovative and technically sophisticated projects. Each project reflects a unique blend of creativity and technical prowess, aimed at solving real-world problems and enhancing user experiences. Below is a brief overview of some key projects.",
+];
+
+const projects = [
+	{
+		name: "Pokemon",
+		Type: "Mobile App",
+		// image: pokemonImg,
+		briefInfo:
+			"Using React Native, TypeScript, and Redux, this app fetches and displays a list of 20 Pokemons with random card colors. It includes features like debouncing search, auto-fetching the next 20 Pokemons, user login, and light/dark themes.",
+	},
+
+	{
+		name: "aiChat",
+		Type: "Web Application",
+		image: aiChatImg,
+		briefInfo:
+			"Built with Next.js, TypeScript, Tailwind CSS, and the OpenAI API, this AI chat application offers a beautiful, engaging UI and OAuth login. Users need to provide their OpenAI API key to use it.",
+	},
+
+	{
+		name: "3D Tee Customization Tool",
+		Type: "Web Application",
+		// image: threeDToolImg,
+		briefInfo:
+			"Web Application Developed using React, Tailwind CSS, Framer Motion, and Three.js, this web app allows users to customize a 3D T-shirt, changing colors and adding logos, with interactive 3D movements.",
+	},
+];
+
+const outro = [
+	"These projects provide a snapshot of my journey through the realms of mobile and web development, showcasing a dedication to learning and innovation.",
+];
+---
+
+<div class="py-2 border-b border-black md:py-4">
+	<p
+		class="font-heading-2 text-xl text-justify mb-2 font-semibold md:text-3xl md:mb-4"
+	>
+		{heading}
+	</p>
+	<div class="md:columns-2 lg:columns-3">
+		<p class="font-sub-heading text-sm my-0 md:mb-2 md:text-lg">
+			{subHeading}
+		</p>
+		<p
+			class="font-sub-heading-caption text-xs font-bold border border-x-0 border-y-1 border-black my-2 md:text-sm"
+		>
+			{subHeadingCaption}
+		</p>
+		{
+			intro?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+		{
+			projects?.map((project) => (
+				<>
+					<p class="uppercase font-body text-sm font-bold leading-tight tracking-tight mt-3 md:mt-4  md:text-base md:leading-5 ">
+						{project.name}{" "}
+						<span class=" text-xs font-other font-light leading-tighter tracking-tight md:text-sm">
+							- {project.Type}
+						</span>
+					</p>
+					<p class="font-body text-sm text-justify leading-tight tracking-tight mt-1 md:text-base md:leading-5 md:my-2">
+						{project.briefInfo}
+					</p>
+					{project?.image && (
+						<Image
+							src={project.image}
+							alt={project.name}
+							class={" h-[130px] object-cover my-2 border border-black"}
+						/>
+					)}
+				</>
+			))
+		}
+		{
+			outro?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-2 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+	</div>
+	<p class="text-right">
+		<a href="/projects" class="font-other text-xs font-bold hover:underline"
+			>for more details <Icon
+				name={"arrow-right"}
+				class="inline-block w-2 h-2 md:w-4 md:h-4"
+			/></a
+		>
+	</p>
+</div>
