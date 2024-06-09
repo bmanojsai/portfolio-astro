@@ -5,6 +5,9 @@ import MyIntro from "../components/MyIntro.astro";
 import MyTechStack from "../components/MyTechStack.astro";
 import ContactMe from "../components/ContactMe.astro";
 import MyPersonalProjects from "../components/MyPersonalProjects.astro";
+import MyCompanyProjects from "../components/MyCompanyProjects.astro";
+import MyAppreciations from "../components/MyAppreciations.astro";
+import MyJourney from "../components/MyJourney.astro";
 ---
 
 <Layout title="About Me">
@@ -13,10 +16,16 @@ import MyPersonalProjects from "../components/MyPersonalProjects.astro";
 		<div class="md:col-span-2 md:pr-3 md:mt-2 md:border-r border-black">
 			<MyIntro />
 			<MyPersonalProjects />
+			<div class="flex flex-col lg:flex-row">
+				<MyCompanyProjects />
+				<MyAppreciations />
+			</div>
 		</div>
 		<div class="md:col-span-1 md:pl-3 md:mt-2">
 			<MyTechStack />
+			<MyJourney />
 			<ContactMe />
 		</div>
 	</div>
+	<hr class="h-px mt-2 bg-gray-600 border-0 md:mt-4" />
 </Layout>

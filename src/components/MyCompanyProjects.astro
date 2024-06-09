@@ -1,58 +1,57 @@
 ---
 import { Image } from "astro:assets";
-// import pokemonImg from "../images/pokemon-project-img.png";
-import aiChatImg from "../images/aiChat-project-img.png";
-// import threeDToolImg from "../images/3D-tool-project-img.png";
 import { Icon } from "astro-icon/components";
 
-const heading = "Innovative Projects: A Glimpse into Cutting-Edge Development";
-const subHeading =
-	"Explore the Range of my Personal Projects Showcasing Technical Expertise and Creativity";
+import FTDImg from "../images/ftd-project-img.png";
 
-const subHeadingCaption = "My Personal Projects";
+const heading = "Innovative Solutions: Projects at Bounteous";
+const subHeading =
+	"A Glimpse into Industry-Level Projects Demonstrating Technical Expertise and Versatility";
+
+const subHeadingCaption = "My Projects in Bounteous";
 
 const intro = [
-	"In the dynamic world of software development, I try to stand out with a portfolio of innovative and technically sophisticated projects. Each project reflects a unique blend of creativity and technical prowess, aimed at solving real-world problems and enhancing user experiences. Below is a brief overview of some key projects.",
+	" At Bounteous, I have worked on several impactful projects, gaining invaluable experience in developing and managing industry-level applications. Below is a brief overview of these projects, showcasing the diverse range of technologies and solutions implemented.",
 ];
 
 const projects = [
 	{
-		name: "Pokemon",
+		name: "Bissell",
 		Type: "Mobile App",
-		// image: pokemonImg,
 		briefInfo:
-			"Using React Native, TypeScript, and Redux, this app fetches and displays a list of 20 Pokemons with random card colors. It includes features like debouncing search, auto-fetching the next 20 Pokemons, user login, and light/dark themes.",
+			"Using React Native, TypeScript, and Redux, this IoT-based mobile application connects and operates home cleaning devices like vacuum cleaners and air purifiers remotely, while also tracking their usage.",
 	},
 
 	{
-		name: "aiChat",
+		name: "FTD | Proflowers",
 		Type: "Web Application",
-		image: aiChatImg,
+		image: FTDImg,
 		briefInfo:
-			"Built with Next.js, TypeScript, Tailwind CSS, and the OpenAI API, this AI chat application offers a beautiful, engaging UI and OAuth login. Users need to provide their OpenAI API key to use it.",
+			"Built with React, Next.js, and Contentful CMS, this static blog website supports FTD | Proflowers, a flower-selling company, enhancing their online content management and user experience.",
 	},
 
 	{
-		name: "3D Tee Customization Tool",
-		Type: "Web Application",
-		// image: threeDToolImg,
+		name: "Kroger ColdFusion Migration",
+		Type: "Discovery",
 		briefInfo:
-			"Web Application Developed using React, Tailwind CSS, Framer Motion, and Three.js, this web app allows users to customize a 3D T-shirt, changing colors and adding logos, with interactive 3D movements.",
+			"Involving ColdFusion and SQL, this project focuses on reverse engineering applications written in ColdFusion, significantly improving the understanding of SQL and legacy system migration.",
 	},
 ];
 
 const outro = [
-	"These projects provide a snapshot of my journey through the realms of mobile and web development, showcasing a dedication to learning and innovation.",
+	"These projects illustrate my ability to tackle diverse technical challenges and deliver effective solutions in a professional environment.",
 ];
 ---
 
-<div class="py-2 border-b border-black md:py-4">
+<div
+	class="w-full py-2 border-b border-black md:py-4 lg:w-[64%] lg:mt-4 lg:pr-6 lg:border-r lg:border-black lg:border-b-0"
+>
 	<p
-		class="font-heading-2 text-xl text-justify mb-2 font-semibold md:text-3xl md:mb-4"
+		class="font-heading-1 text-xl text-justify mb-2 font-semibold md:text-3xl md:mb-4"
 	>
 		{heading}
 	</p>
-	<div class="md:columns-2 lg:columns-3">
+	<div class="md:columns-2 lg:columns-2">
 		<p class="font-sub-heading text-sm my-0 md:mb-2 md:text-lg">
 			{subHeading}
 		</p>

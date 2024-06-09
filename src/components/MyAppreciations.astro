@@ -1,0 +1,54 @@
+---
+//Imports
+
+//Data
+const heading = "Recognitions and Appreciations";
+const subHeadingCaption = "Appreciation & Feedback";
+const body1 = [
+	"Throughout my career, I have received several commendations for my work on various projects. Here are some notable appreciations",
+	"I received praise from both the client and the North America (NA) team for the successful demo presentation during the Sodexo Project.",
+];
+
+const body2 = [
+	"I was appreciated by senior team members for the successful completion of the Sodexo Project and the effective management of the team.",
+	"These acknowledgments motivate me to continue striving for excellence in my professional journey.",
+];
+
+const summary = [
+	"Praised for exceptional project delivery and team leadership.",
+];
+---
+
+<div class="py-2 border-b border-black lg:flex-1 lg:px-4 md:border-b-0">
+	<p
+		class="font-heading-2 text-xl text-justify my-1 font-semibold md:text-3xl md:my-2"
+	>
+		{heading}
+	</p>
+	<p
+		class="font-sub-heading-caption text-xs font-bold border border-x-0 border-y-1 border-black my-2 md:text-sm"
+	>
+		{subHeadingCaption}
+	</p>
+	<div class="mt-4">
+		{
+			body1?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+		<p
+			class="hidden lg:block font-body text-sm text-justify indent-8 leading-tight tracking-tight md:my-6 md:mx-2 md:py-8 md:px-4 border border-black md:text-base md:leading-5"
+		>
+			{summary}
+		</p>
+		{
+			body2?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+	</div>
+</div>

@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import FTDImg from "../images/ftd-project-img.png";
+
+const heading = "Educational Background and Professional Journey";
+const subHeadingCaption = "Education & Journey";
+
+const stages = [
+	{
+		name: "Senior Software Engineer",
+		In: "Bounteous, Chennai, Tamil Nadu, India",
+		Year: "2022 - Present",
+		briefInfo:
+			"Currently, I am a full-stack JavaScript developer at Bounteous. My tech stack includes React, React Native, Next.js, TypeScript, Tailwind, Node.js, Express.js, and many more. In this role, I have had the opportunity to work on diverse and challenging projects, honing my skills and expanding my expertise.",
+	},
+	{
+		name: "Internship",
+		In: "Bounteous, Chennai, Tamil Nadu, India",
+		Year: "2022",
+		briefInfo:
+			"In my final semester, I joined Lister Technologies as an intern. During this internship, I deepened my knowledge of web development and gained practical experience in the field.",
+	},
+	{
+		name: "Graduation",
+		In: "SASTRA University, Thanjavur, Tamil Nadu, India",
+		Year: "2018 - 2022",
+		briefInfo:
+			"I graduated from SASTRA University with a degree in Electronics and Communication Engineering (ECE). My passion for web development led me to secure a software job through campus placement.",
+	},
+];
+---
+
+<div class="w-full py-2 border-b border-black md:py-4">
+	<p
+		class="font-heading-1 text-xl text-justify mb-2 font-semibold md:text-3xl md:mb-4"
+	>
+		{heading}
+	</p>
+
+	<p
+		class="font-sub-heading-caption text-xs font-bold border border-x-0 border-y-1 border-black my-2 md:text-sm"
+	>
+		{subHeadingCaption}
+	</p>
+	{
+		stages?.map((stage, index) => {
+			return (
+				<>
+					{index !== 0 && (
+						<center>
+							<Icon
+								name="arrow-up"
+								class="inline-block w-4 h-4 md:w-6 md:h-6"
+							/>
+						</center>
+					)}
+
+					<p class="uppercase font-body text-sm leading-tight tracking-tight mt-3 md:mt-4  md:text-base md:leading-5 ">
+						{stage.Year}{" "}
+						<span class="text-xs font-other font-bold leading-tighter tracking-tight md:text-sm">
+							- {stage.name}
+						</span>
+					</p>
+					<p class="font-body text-sm font-bold leading-tight tracking-tight  md:text-base md:leading-5">
+						{stage.In}
+					</p>
+					<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+						{stage.briefInfo}
+					</p>
+				</>
+			);
+		})
+	}
+</div>
