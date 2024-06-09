@@ -1,0 +1,82 @@
+---
+const heading = "Drop Me a Line";
+const subHeadingCaption = "Contact Me";
+const body = [
+	"If you have any questions, comments, or suggestions, feel free to reach out to me through the below form. I would love to hear from you!",
+];
+---
+
+<div class="py-2 border-b border-black">
+	<p
+		class="font-heading-1 text-xl text-justify my-1 font-semibold md:text-4xl md:tracking-tight md:my-2"
+	>
+		{heading}
+	</p>
+	<p
+		class="font-sub-heading-caption text-xs font-bold border border-x-0 border-y-1 border-black my-2 md:text-sm"
+	>
+		{subHeadingCaption}
+	</p>
+	<div class="mt-4">
+		{
+			body?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+	</div>
+
+	<div
+		class="contact-form mx-2 my-3 font-body text-sm text-justify leading-tight tracking-tight md:text-base md:leading-5 md:my-4"
+	>
+		<form id="contactForm">
+			<label for="name">Name:</label><br />
+			<input
+				type="text"
+				id="name"
+				name="name"
+				placeholder="your name"
+				class="w-full rounded-sm border border-gray-400 px-1 py-0.5 mb-2"
+				required
+			/>
+
+			<label for="email">Email:</label><br />
+			<input
+				type="email"
+				id="email"
+				name="email"
+				placeholder="email to contact you"
+				class="w-full rounded-sm border border-gray-400 px-1 py-0.5 mb-2"
+				required
+			/>
+
+			<label for="subject">Subject:</label><br />
+			<input
+				type="text"
+				id="subject"
+				name="subject"
+				placeholder="brief reason for contact"
+				class="w-full rounded-sm border border-gray-400 px-1 py-0.5 mb-2"
+			/>
+
+			<label for="message">Message:</label><br />
+			<textarea
+				id="message"
+				name="message"
+				rows="3"
+				placeholder="your message"
+				class="w-full rounded-sm border border-gray-400 px-1 py-0.5 mb-2"
+				required></textarea>
+
+			<div class="flex items-center">
+				<button
+					type="submit"
+					class="px-4 py-1 border border-black active:bg-black active:text-white rounded-sm inline-block md:px-6"
+					>Send</button
+				>
+				<div id="contact-status" class="inline-block text-wrap ml-2"></div>
+			</div>
+		</form>
+	</div>
+</div>
