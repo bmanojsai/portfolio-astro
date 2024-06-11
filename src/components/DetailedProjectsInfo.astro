@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import pokemonImg from "../images/pokemon-project-img.png";
+import aiChatImg from "../images/aiChat-project-img.png";
+import threeDToolImg from "../images/3D-tool-project-img.png";
+import { Icon } from "astro-icon/components";
+
+interface Project {
+	name: string;
+	Type: string;
+	image?: any;
+	techStack: string;
+	githubUrl?: string;
+	hostUrl?: string;
+	info: string[];
+}
+
+interface Props {
+	index: number;
+	heading: string;
+	subHeading: string;
+	subHeadingCaption: string;
+	intro: string[];
+	projects: Project[];
+	outro: string[];
+}
+
+const { index, heading, subHeading, subHeadingCaption, intro, projects, outro } =
+	Astro.props;
+---
+
+<div class=`py-2 md:mt-2 md:py-4 lg:mt-2 border-b border-black lg:border-b-0 ${index == 2 && '!border-b-0'}`>
+	<p
+		class=`font-heading-2 text-xl text-justify mb-2 font-semibold md:text-3xl md:mb-4 ${index == 1 && '!font-heading-1'}`
+	>
+		{heading}
+	</p>
+	<div class="md:columns-3 lg:columns-3">
+		<p class="font-sub-heading text-sm my-0 md:mb-2 md:text-lg">
+			{subHeading}
+		</p>
+		<p
+			class="font-sub-heading-caption text-xs font-bold border border-x-0 border-y-1 border-black my-2 md:text-sm"
+		>
+			{subHeadingCaption}
+		</p>
+		{
+			intro?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-1 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+		{
+			projects?.map((project) => (
+				<div>
+					<p class="uppercase font-body text-sm font-bold leading-tight tracking-tight mt-4 md:mt-6  md:text-base md:leading-5 ">
+						{project.name}{" "}
+						<span class=" text-xs font-other font-light leading-tighter tracking-tight md:text-sm">
+							- {project.Type}
+						</span>
+					</p>
+					<p class="font-body text-sm font-bold leading-tight tracking-tight mt-1 md:text-base md:leading-5">
+						{project.techStack}
+					</p>
+					{project.info.map((para) => (
+						<p class="font-body text-sm text-justify leading-tight indent-8 tracking-tight mt-1 md:text-base md:leading-5 md:my-2">
+							{para}
+						</p>
+					))}
+
+					{project?.image && (
+						<Image
+							src={project.image}
+							alt={project.name}
+							class={`h-[130px] object-cover my-1 border border-black md:my-2 ${project.name == "Pokemon" && " h-[200px] w-[100px] md:h-[300px] md:w-[150px] mx-auto"}`}
+						/>
+					)}
+					{project?.githubUrl && (
+						<div class="flex !items-center">
+							<a
+								href={project.githubUrl}
+								target="_blank"
+								class={`text-xs md:text-sm hover:underline font-bold`}
+							>
+								Source Code
+							</a>
+
+							<Icon
+								name="open-outline"
+								class={"inline-block w-2 h-2 ml-0.5 md:w-3 md:h-3 "}
+							/>
+						</div>
+					)}
+
+					{project?.hostUrl && (
+						<div class="flex !items-center mb-2 md:mb-4">
+							<a
+								href={project.hostUrl}
+								target="_blank"
+								class={`text-xs md:text-sm hover:underline font-bold`}
+							>
+								View website
+							</a>
+
+							<Icon
+								name="open-outline"
+								class={"inline-block w-2 h-2 ml-0.5 md:w-3 md:h-3 "}
+							/>
+						</div>
+					)}
+				</div>
+			))
+		}
+		{
+			outro?.map((para) => (
+				<p class="font-body text-sm text-justify indent-8 leading-tight tracking-tight my-2 md:text-base md:leading-5 md:my-2">
+					{para}
+				</p>
+			))
+		}
+	</div>
+</div>

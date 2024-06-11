@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DetailedProjectsInfo from "../components/DetailedProjectsInfo.astro";
+
+import pokemonImg from "../images/pokemon-project-img.png";
+import aiChatImg from "../images/aiChat-project-img.png";
+import threeDToolImg from "../images/3D-tool-project-img.png";
+import FTDImg from "../images/ftd-project-img.png";
+
+const personalProjectHeading = "In-Depth Look at Innovative Projects by me";
+const personalProjectSubHeading =
+	"Detailed Insights into Personal Projects Showcasing Technical Mastery and Creativity";
+
+const personalProjectSubHeadingCaption = "My Personal Projects";
+
+const personalProjectIntro = [
+	"Welcome to the detailed section of My Personal Project's. Here, we delve deeper into the intricacies of each project, exploring the technologies used, the challenges faced, and the innovative solutions developed. Each project reflects a significant milestone in my journey as a developer.",
+];
+
+const personalProjects = [
+	{
+		name: "Pokemon",
+		Type: "Mobile App",
+		image: pokemonImg,
+		techStack: "React Native, TypeScript, Redux",
+		githubUrl: "https://github.com/bmanojsai/pokemon",
+		info: [
+			"The Pokemon app is a mobile application designed to fetch and display a list of 20 Pokemons, each with random card colors. It uses an external API to load the next set of Pokemons as users reach the end of the list.",
+			"The app includes features like debouncing search, auto-fetching the next 20 Pokemons, user login, and both light and dark themes. This project was developed when I started learning React Native, testing my knowledge by building a full-fledged app. The development process was both challenging and enjoyable, marking a significant learning milestone.",
+		],
+	},
+
+	{
+		name: "aiChat",
+		Type: "Web Application",
+		image: aiChatImg,
+		techStack: "Next.js, TypeScript, Tailwind CSS, OpenAI API",
+		githubUrl: "https://github.com/bmanojsai/aiChat",
+		hostUrl: "https://ai-chat-blush-xi.vercel.app/",
+		info: [
+			"aiChat is a web application that leverages the OpenAI API for AI-driven responses, featuring a beautiful and engaging UI. Users can sign in using OAuth, but they must provide their own OpenAI API key to use the app.",
+			"The responsive design ensures a seamless experience across devices. Developing this application provided me with invaluable insights into integrating AI features into web applications, and deepened their understanding of API connectivity.",
+		],
+	},
+
+	{
+		name: "3D Tee Customization Tool",
+		Type: "Web Application",
+		image: threeDToolImg,
+		techStack: "React, Tailwind CSS, Framer Motion, Three.js",
+		githubUrl: "https://github.com/bmanojsai/threejs_client",
+		hostUrl: "https://threejs-client.vercel.app/",
+		info: [
+			"The 3D Tee Customization Tool is a web application that allows users to customize a 3D T-shirt by changing colors and adding logos. Built with React, Tailwind CSS, Framer Motion, and Three.js, it features interactive 3D movements based on mouse pointer interactions",
+			"I thought about working in 3D and animation features in web development and luckily found this project on YouTube. They embraced the opportunity to explore and implement complex animations and 3D interactions, gaining substantial experience in the process.",
+		],
+	},
+];
+
+const personalProjectOutro = [
+	"These projects highlight my dedication to pushing the boundaries of mobile and web development. Each project not only showcases technical skills but also the ability to learn, adapt, and innovate. As I continue to explore new technologies and techniques, these projects serve as a testament to their growth and potential in the field.",
+];
+
+const professionalProjectHeading =
+	"In-Depth Look at Innovative Solutions by me at Bounteous";
+const professionalProjectSubHeading =
+	"Detailed Insights into Industry-Level Projects Showcasing Technical Mastery and Versatility";
+
+const professionalProjectSubHeadingCaption = "My Projects in Bounteous";
+
+const professionalProjectIntro = [
+	"Welcome to the detailed section of my projects at Bounteous. Here, we explore each project in depth, highlighting the technologies used, the challenges faced, and the innovative solutions developed. These projects reflect significant milestones in my professional journey, showcasing their growth and expertise in the field.",
+];
+
+const professionalProjects = [
+	{
+		name: "Bissell",
+		Type: "Mobile App",
+		techStack: "React Native, TypeScript, Redux",
+		info: [
+			"The Bissell project is an IoT-based mobile application designed to connect and operate home cleaning devices such as vacuum cleaners and air purifiers. The app enables users to control these devices remotely and track their usage.",
+			"This was my first official project in React Native, as well as my first project at Bounteous and in my career. Although the primary focus was on fixing bugs and handling minor tickets, this project provided me with a solid understanding of production-level React Native apps and the coding standards employed in a professional setting.",
+		],
+	},
+
+	{
+		name: "FTD | Proflowers",
+		Type: "Web Application",
+		image: FTDImg,
+		techStack: "React, Next.js, Contentful CMS",
+		info: [
+			"The FTD | Proflowers project involved developing a static blog website for a flower-selling company. Utilizing React, Next.js, and Contentful CMS, this web application supports the company's content management needs.",
+			"This project offered me valuable experience in Next.js and underscored the importance of a robust content management system in modern web development. The project helped streamline the company's online content strategy and improve their digital marketing efforts.",
+		],
+	},
+
+	{
+		name: "Kroger ColdFusion Migration",
+		Type: "Discovery",
+		techStack: "ColdFusion, SQL",
+		info: [
+			"The Kroger ColdFusion Migration project was a discovery phase focused on reverse engineering applications written in ColdFusion. The primary goal was to understand and document the existing system to facilitate future migrations.",
+			"Through this project, I gained a deeper understanding of SQL and legacy system migration, enhancing their ability to handle complex database queries and maintain legacy systems.",
+		],
+	},
+];
+
+const professionalProjectOutro = [
+	"These detailed project descriptions highlight my dedication to delivering high-quality solutions and their ability to adapt to various technologies and project requirements. Each project not only showcases technical skills but also reflects my commitment to continuous learning and professional growth.",
+];
+---
+
+<Layout title="My Projects">
+	<hr class="h-px bg-gray-600 border-0 md:mt-1" />
+	<div class="flex flex-col lg:flex-row gap-0 lg:gap-6">
+		<DetailedProjectsInfo
+			index={1}
+			heading={personalProjectHeading}
+			subHeading={personalProjectSubHeading}
+			subHeadingCaption={personalProjectSubHeadingCaption}
+			intro={personalProjectIntro}
+			projects={personalProjects}
+			outro={personalProjectOutro}
+		/>
+		<div class="hidden w-[1px] border-r border-black lg:my-4 lg:block"></div>
+		<DetailedProjectsInfo
+			index={2}
+			heading={professionalProjectHeading}
+			subHeading={professionalProjectSubHeading}
+			subHeadingCaption={professionalProjectSubHeadingCaption}
+			intro={professionalProjectIntro}
+			projects={professionalProjects}
+			outro={professionalProjectOutro}
+		/>
+	</div>
+
+	<hr class="h-px mt-2 bg-gray-600 border-0 md:mt-4" />
+</Layout>
