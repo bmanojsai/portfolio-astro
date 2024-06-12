@@ -2,42 +2,45 @@
 //Imports
 import "../styles/global.css";
 import LastUpdated from "../components/LastUpdated.astro";
+import Pagination from "../components/pagination.astro";
+import DownloadCV from "../components/DownloadCV.astro";
 
 //title
-import '@fontsource/unifrakturmaguntia';
+import "@fontsource/unifrakturmaguntia";
 
 //Headings 1 & 2
 // Supports weights 100-900
-import '@fontsource-variable/noto-serif-display';
-import '@fontsource/dm-serif-display';
+import "@fontsource-variable/noto-serif-display";
+import "@fontsource/dm-serif-display";
 
 //Sub headings (light, regular, medium, semibold)
-import '@fontsource/ibm-plex-serif/300.css';
-import '@fontsource/ibm-plex-serif/400.css';
-import '@fontsource/ibm-plex-serif/500.css';
-import '@fontsource/ibm-plex-serif/600.css';
+import "@fontsource/ibm-plex-serif/300.css";
+import "@fontsource/ibm-plex-serif/400.css";
+import "@fontsource/ibm-plex-serif/500.css";
+import "@fontsource/ibm-plex-serif/600.css";
 
 //Sub Heading Captions
-import '@fontsource/lato/300.css';
-import '@fontsource/lato/400.css';
-import '@fontsource/lato/700.css';
-import '@fontsource/lato/900.css';
+import "@fontsource/lato/300.css";
+import "@fontsource/lato/400.css";
+import "@fontsource/lato/700.css";
+import "@fontsource/lato/900.css";
 
 //Body
-import '@fontsource/tinos/400.css';
-import '@fontsource/tinos/700.css';
+import "@fontsource/tinos/400.css";
+import "@fontsource/tinos/700.css";
 
 //Others/Capitals
 // Supports weights 300-800
-import '@fontsource-variable/open-sans';
+import "@fontsource-variable/open-sans";
 
 //Types
 interface Props {
 	title: string;
+	pageNumber: number;
 }
 
 //Props & Params
-const { title } = Astro.props;
+const { title, pageNumber } = Astro.props;
 ---
 
 <!doctype html>
@@ -51,10 +54,14 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-neutral-100 p-10">
-		<LastUpdated />
+		<div class="flex justify-between items-end flex-row-reverse">
+			<LastUpdated />
+			<!-- <DownloadCV /> -->
+		</div>
 		<slot />
+		<Pagination index={pageNumber} />
 		<script>
-			import "../scripts/home"
+			import "../scripts/home";
 		</script>
 	</body>
 </html>

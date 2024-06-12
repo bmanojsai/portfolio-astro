@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+
+const pagesDetails: Record<number, string> = {
+	1: "/",
+	2: "/projects",
+};
+
+interface Props {
+	index: number;
+}
+
+const { index } = Astro.props;
+---
+
+<div class="flex justify-center items-center gap-1 mt-1 md:mt-2">
+	<a
+		href={`${pagesDetails[index - 1]}`}
+		class={`cursor-pointer ${pagesDetails[index - 1] ? "cursor-pointer" : " cursor-not-allowed"}`}
+	>
+		<Icon name="chevron-left" class="w-4 h-4" /></a
+	>
+	<p class="text-xs bg-white px-2 py-1 rounded-sm">{index}</p>
+	<a
+		href={`${pagesDetails[index + 1]}`}
+		class={`cursor-pointer ${pagesDetails[index + 1] ? "cursor-pointer" : " cursor-not-allowed"}`}
+	>
+		<Icon name="chevron-right" class="w-4 h-4" /></a
+	>
+</div>
